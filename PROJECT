@@ -1,0 +1,10 @@
+domain: tutorial.kubebuilder.io
+repo: operator-sample2
+resources:
+- group: batch
+  kind: FireWall
+  version: v1
+- group: batch
+  kind: LoadBalancer
+  version: v1
+version: "2"

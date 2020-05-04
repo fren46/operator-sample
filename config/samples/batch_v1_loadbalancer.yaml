@@ -1,0 +1,8 @@
+apiVersion: batch.tutorial.kubebuilder.io/v1
+kind: LoadBalancer
+metadata:
+  name: loadbalancer-sample
+spec:
+  threshold: 1
+status:
+  deploymentReplicas: 0

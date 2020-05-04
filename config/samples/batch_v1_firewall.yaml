@@ -1,0 +1,9 @@
+apiVersion: batch.tutorial.kubebuilder.io/v1
+kind: FireWall
+metadata:
+  name: firewall-sample
+spec:
+  deploymentName: nginx-deployment
+  secondOperatorName: secondplayer-sample
+status:
+    deploymentReplicas: 0
