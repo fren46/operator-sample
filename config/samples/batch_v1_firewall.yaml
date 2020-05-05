@@ -4,6 +4,6 @@ metadata:
   name: firewall-sample
 spec:
   deploymentName: nginx-deployment
-  secondOperatorName: secondplayer-sample
+  secondOperatorName: loadbalancer-sample
 status:
     deploymentReplicas: 0

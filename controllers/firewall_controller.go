@@ -59,12 +59,12 @@ func (r *FireWallReconciler) Reconcile(req ctrl.Request) (ctrl.Result, error) {
 		v1api := v1.NewAPI(clientP)
 		ctxWT, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 		defer cancel()
-		result, warnings, err := v1api.Query(ctxWT, "up", time.Now())
+		result, warnings, err := v1api.Query(ctxWT, "kube_pod_info{pod=~\"nginx.*\"}", time.Now())
 		if err == nil {
 			if len(warnings) > 0 {
 				fmt.Printf("Warnings: %v\n", warnings)
 			}
-			fmt.Printf("Result:\n%v\n", result)
+			fmt.Printf("Prometheus Result:\n%v\n", result)
 		} else {
 			fmt.Printf("Error querying Prometheus: %v\n", err)
 		}
